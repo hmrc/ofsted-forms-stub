@@ -1,3 +1,4 @@
 # microservice specific routes
 
-GET        /hello-world             uk.gov.hmrc.ofstedformsstub.controllers.MicroserviceHelloWorld.hello
+GET         /proxy/geturn           uk.gov.hmrc.ofstedformsstub.controllers.OftsedFormsStubController.getUrn
+POST        /proxy/form             uk.gov.hmrc.ofstedformsstub.controllers.OftsedFormsStubController.submitForm
