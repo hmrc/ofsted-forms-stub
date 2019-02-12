@@ -23,7 +23,16 @@ import uk.gov.hmrc.play.bootstrap.controller.BaseController
 import scala.concurrent.Future
 
 @Singleton()
-class OftsedFormsStubController extends BaseController {
+class OfstedFormsStubController extends BaseController {
+
+  def getPendingForms() = Action.async {
+    implicit request =>
+      Future.successful(Ok("Get list of pending forms"))
+  }
+
+  def submit() = Action.async { implicit request =>
+    Future.successful(Ok("Submit form"))
+  }
 
   def getUrn() = Action.async { implicit request =>
     Future.successful(Ok("Hello world"))
@@ -32,6 +41,5 @@ class OftsedFormsStubController extends BaseController {
   def submitForm() = Action.async { implicit request =>
     Future.successful(Ok("Hello world"))
   }
-
 
 }

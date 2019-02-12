@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.ofstedformsstub.controllers
+package uk.gov.hmrc.ofstedformsstub.repositories
 
-import org.scalatest.{Matchers, WordSpec}
-import org.scalatestplus.play.guice.GuiceOneAppPerSuite
-import play.api.http.Status
-import play.api.test.FakeRequest
-import play.api.test.Helpers._
+import org.w3c.dom.Document
+import play.api.libs.json.Json
 
-class OftsedFormsStubControllerControllerSpec extends WordSpec with Matchers with GuiceOneAppPerSuite {
+// TODO: dummy definition for now
+case class SubmittedApplicationForm(id : Int, documents : String)
 
-  val fakeRequest = FakeRequest("GET", "/")
+object SubmittedApplicationForm {
+  implicit val formats = Json.format[SubmittedApplicationForm]
+  def apply(id: Int, documents: Document): SubmittedApplicationForm = SubmittedApplicationForm(id, documents)
 
-  "GET /" should {
-    "return 200" in {
-      val controller = new OfstedFormsStubController()
-      val result = controller.getUrn()(fakeRequest)
-      status(result) shouldBe Status.OK
-    }
-  }
 
 }
+
+

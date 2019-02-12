@@ -1,4 +1,6 @@
 # microservice specific routes
 
-GET         /proxy/geturn           uk.gov.hmrc.ofstedformsstub.controllers.OftsedFormsStubController.getUrn
-POST        /proxy/form             uk.gov.hmrc.ofstedformsstub.controllers.OftsedFormsStubController.submitForm
+GET         /forms/pending          uk.gov.hmrc.ofstedformsstub.controllers.OfstedFormsStubController.getPendingForms
+POST        /forms                  uk.gov.hmrc.ofstedformsstub.controllers.OfstedFormsStubController.submit
+GET         /proxy/geturn           uk.gov.hmrc.ofstedformsstub.controllers.OfstedFormsStubController.getUrn
+POST        /proxy/form             uk.gov.hmrc.ofstedformsstub.controllers.OfstedFormsStubController.submitForm
